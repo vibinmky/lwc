@@ -3,7 +3,7 @@
     <div id="LightningComponentid" />    
     <script>
     $Lightning.use("c:siteTrail", function() {
-        $Lightning.createComponent("c:calculator",
+        $Lightning.createComponent("c:bmiCalculator",
           { 
           },
           "LightningComponentid",
