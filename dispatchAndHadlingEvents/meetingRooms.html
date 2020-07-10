@@ -1,0 +1,23 @@
+<template>
+
+  <lightning-card>
+    <lightning-layout>
+      <div style="padding:10px">Select Meeting Room</div>
+      <lightning-layout-item size='8' padding='around-small'>
+        <ul>
+          <template for:each={meetingRoomsInfo} for:item="room">
+            <li key={room.Name} style="padding: 10px">
+              <c-meeting-room meeting-room-info={room} show onselectedroomevent={tileSelected}>
+
+              </c-meeting-room>
+            </li>
+          </template>
+        </ul>
+      </lightning-layout-item>
+      <lightning-layout-item title="Selected Room Name" size='4' padding='around-small'>
+        Selected Room Name is = {selectedRoomName}
+      </lightning-layout-item>
+    </lightning-layout>
+  </lightning-card>
+
+</template>
