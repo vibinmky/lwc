@@ -7,7 +7,7 @@
         <ul>
           <template for:each={meetingRoomsInfo} for:item="room">
             <li key={room.Name} style="padding: 10px">
-              <c-meeting-room meeting-room-info={room} show onselectedroomevent={tileSelected}>
+              <c-meeting-room meeting-room-info={room} show >
 
               </c-meeting-room>
             </li>
