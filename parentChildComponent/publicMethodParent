@@ -1,0 +1,34 @@
+import {
+  LightningElement
+} from 'lwc';
+
+export default class PublicMethodParent extends LightningElement {
+  constructor() {
+    super();
+    console.log('Contructed Called');
+
+  }
+
+  connectedCallback() {
+    console.log('connect Callback Called');
+  }
+
+  renderedCallback() {
+    console.log('rendered Callback Called');
+  }
+
+  disconnectedCallback() {
+    console.log('Disconnect Callabck Called');
+  }
+  value;
+
+  setValue(event) {
+    this.value = event.target.value;
+  }
+
+  selectCheckBox() {
+    const childComponent = this.template.querySelector('c-public-method-child');
+
+    childComponent.selectCheckBox(this.value);
+  }
+}
