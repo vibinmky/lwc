@@ -10,7 +10,7 @@ export default class MeetingRoom extends LightningElement {
   selectedMeetingRoom() {
     // create custom event then dispatch it
     const selectedRoomEvent = new CustomEvent('selectedroomevent', {
-      detail: this.meetingRoomInfo
+      detail: this.meetingRoomInfo, bubbles: true
     });
     this.dispatchEvent(selectedRoomEvent);
   }
