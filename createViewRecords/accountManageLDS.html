@@ -1,0 +1,29 @@
+<template>
+  <lightning-card>
+    <lightning-layout>
+      <lightning-layout-item size="6" padding="around-medium">
+        <lightning-card title="Account Details">
+          <lightning-input label="Account Name" onchange={accountName}></lightning-input>
+          <lightning-input label="Account Phone" type="phone" onchange={accountPhone}></lightning-input>
+          <lightning-input label="Account URL" type="url" onchange={accountUrl}></lightning-input>
+
+          <lightning-button label="Add Account" variant="brand" onclick={createAccount}></lightning-button>
+        </lightning-card>
+      </lightning-layout-item>
+      <lightning-layout-item size="6" padding="around-medium">
+        <lightning-card title="View Account">
+          <p>
+            <lightning-formatted-text value={retName}></lightning-formatted-text>
+          </p>
+          <p>
+            <lightning-formatted-phone value={retPhone}></lightning-formatted-phone>
+          </p>
+          <p>
+            <lightning-formatted-url value={retUrl}></lightning-formatted-url>
+          </p>
+        </lightning-card>
+      </lightning-layout-item>
+    </lightning-layout>
+
+  </lightning-card>
+</template>
