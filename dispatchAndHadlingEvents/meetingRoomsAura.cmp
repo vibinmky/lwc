@@ -1,0 +1,30 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+
+  <aura:attribute name="meetingRoomInfo" type='List' />
+  <aura:attribute name="selectedRoomName" type="String" />
+
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <lightning:card>
+    <div class="slds-box slds-p-around_small">Select Meeting Room Aura</div>
+    <lightning:layout>
+
+      <lightning:layoutItem size='6' padding='around-small'>
+        <ul>
+          <aura:iteration items="{!v.meetingRoomInfo}" var="room">
+            <li style="padding: 10px">
+              <c:meetingRoom meetingRoomInfo="{#room}" show='true'  onselectedroomevent="{!c.handleClick}">
+              </c:meetingRoom>
+            </li>
+          </aura:iteration>
+        </ul>
+      </lightning:layoutItem>
+      <lightning:layoutItem title="Selected Room Name" size='6' padding='around-small'>
+        <div class="slds-p-around_medium slds-box">
+          Selected Room Name is = {!v.selectedRoomName}
+        </div>
+
+      </lightning:layoutItem>
+    </lightning:layout>
+  </lightning:card>
+
+</aura:component>
